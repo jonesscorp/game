@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VPN Service</title>
+</head>
+<body>
+    <h1>VPN Service</h1>
+    
+    <div id="vpn-status">
+        <p>Status: <span id="status">Disconnected</span></p>
+        <button onclick="toggleVPN()">Connect VPN</button>
+    </div>
+    
+    <br>
+    <a href="../">← Back to Home</a>
+    <p>URL: <script>document.write(window.location.href)</script></p>
+    
+    <script>
+        let isConnected = false;
+        
+        function toggleVPN() {
+            isConnected = !isConnected;
+            const statusElement = document.getElementById('status');
+            const button = document.querySelector('button');
+            
+            if (isConnected) {
+                statusElement.textContent = "Connected ✅";
+                statusElement.style.color = "green";
+                button.textContent = "Disconnect VPN";
+            } else {
+                statusElement.textContent = "Disconnected";
+                statusElement.style.color = "red";
+                button.textContent = "Connect VPN";
+            }
+        }
+    </script>
+</body>
+</html>
