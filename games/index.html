@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Games Collection</title>
+</head>
+<body>
+    <h1>Simple Games</h1>
+    
+    <h3>Guess the Number (1-10)</h3>
+    <input type="number" id="guess" min="1" max="10">
+    <button onclick="checkGuess()">Check Guess</button>
+    <p id="game-result">Enter your guess!</p>
+    
+    <br>
+    <a href="../">← Back to Home</a>
+    <p>URL: <script>document.write(window.location.href)</script></p>
+    
+    <script>
+        const secretNumber = Math.floor(Math.random() * 10) + 1;
+        
+        function checkGuess() {
+            const guess = parseInt(document.getElementById('guess').value);
+            const resultElement = document.getElementById('game-result');
+            
+            if (guess === secretNumber) {
+                resultElement.textContent = "🎉 Correct! You won!";
+            } else {
+                resultElement.textContent = "❌ Wrong! Try again!";
+            }
+        }
+    </script>
+</body>
+</html>
